@@ -40,11 +40,13 @@ export class LoginComponent implements OnInit {
             }
         );
     }
-
+    skip() {
+        this.router.navigate(["/home"], { clearHistory: true });
+    }
     login() {
         this.ls.login().then(
             (result) => {
-                this.router.navigate(["/pokemon"], { clearHistory: true });
+                this.router.navigate(["/home"], { clearHistory: true });
             },
             (err) => {
                 console.log(err);

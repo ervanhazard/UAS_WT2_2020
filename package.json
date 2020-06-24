@@ -1,6 +1,6 @@
 {
   "nativescript": {
-    "id": "com.hansen.app",
+    "id": "com.ervan.app",
     "tns-ios": {
       "version": "6.5.0"
     },

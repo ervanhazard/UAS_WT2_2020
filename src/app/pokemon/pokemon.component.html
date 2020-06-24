@@ -1,11 +1,14 @@
-<ActionBar title="Dota2 Heroes Detail" style="background-color: red; font-weight: bold; color: white;">
+<ActionBar title="Dota2 Heroes" style="background-color: white; font-weight: bold; color: black;">
 </ActionBar>
 
 <GridLayout>
     <ListView [items]="pokemons$ | async" (loadMoreItems)="loadMore()">
         <ng-template let-pokemon="item">
             <StackLayout>
-                <Label [nsRouterLink]="['/pokemon', pokemon.localized_name]" [text]="pokemon.localized_name"></Label>
+                <GridLayout rows="auto" columns="70px,*" [nsRouterLink]="['/pokemon', pokemon.id]">
+                    <Image row="0" col="0" [src]="'https://api.opendota.com'+pokemon.icon"></Image>
+                    <Label row="0" col="1" [text]="pokemon.localized_name"></Label>
+                </GridLayout>
             </StackLayout>
         </ng-template>
     </ListView>

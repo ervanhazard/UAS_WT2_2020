@@ -23,7 +23,7 @@ export class ShellComponent implements OnInit {
     }
     onTap(name:String){
         switch (name) {
-            case "poke":
+            case "hero":
                 this.router.navigate(["/pokemon"]);
                 break;
             // case "digi":

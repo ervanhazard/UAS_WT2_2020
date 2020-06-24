@@ -1,35 +1,34 @@
-<ActionBar [title]="'Details of '+name" style="background-color: red; font-weight: bold; color: white;"></ActionBar>
+<ActionBar [title]="'Details of '+heroes.localized_name" style="background-color: white; font-weight: bold; color: black;"></ActionBar>
 
-<GridLayout rows="auto, auto, auto, *" columns="*, *" *ngIf="pokemon">
+<GridLayout rows="auto, auto, auto, *" columns="*, *" *ngIf="heroes">
 
     <Label [text]="name" class="h1 p-l-20" row="0" col="0" colSpan="2"></Label>
-    <Image [src]="pokemon.sprites.front_default" row="1" col="0" backgroundColor="white" ></Image>
-    <Image [src]="pokemon.sprites.back_default" row="1" col="1" backgroundColor="lightgray"></Image>
+    <Image [src]="'https://api.opendota.com'+heroes.img" row="1" col="0" colSpan="2" backgroundColor="white" ></Image>
 
     <Label text="Stats" class="h1 p-l-20" row="2" col="0" colSpan="2"></Label>
 
 
-    <GridLayout rows="auto, auto, auto, auto, auto, auto, auto" columns="*, *" row="3" col="0" colSpan="2" backgroundColor="darkslategray" class="p-l-20">
-        <Label text="Pokemon Name" class="font-weight-bold" row="0" col="0"></Label>
-        <Label [text]="pokemon.name" class="text-uppercase" row="0" col="1"></Label>
+    <GridLayout rows="auto, auto, auto, auto, auto, auto, auto" columns="*, *" row="3" col="0" colSpan="2"  class="p-l-20">
+        <Label text="Hero Name" class="font-weight-bold" row="0" col="0"></Label>
+        <Label [text]="heroes.localized_name" class="text-uppercase" row="0" col="1"></Label>
 
-        <Label text="Pokemon Type(s)" class="font-weight-bold" row="1" col="0"></Label>
-        <Label [text]="pokemon.types[0].type.name + (pokemon.types[1] ? '/' + pokemon.types[1].type.name : '')" row="1" col="1"></Label>
+        <Label text="Attack Type / Attr: " class="font-weight-bold" row="1" col="0"></Label>
+        <Label [text]="heroes.attack_type + ' / '+ heroes.primary_attr" row="1" col="1"></Label>
         
-        <Label text="Pokemon Ability" class="font-weight-bold" row="2" col="0"></Label>
-        <Label [text]="pokemon.abilities[0].ability.name"  row="2" col="1"></Label>
+        <Label text="Roles(s)" class="font-weight-bold" row="2" col="0"></Label>
+        <Label [text]="heroes.roles[0]+'/'+heroes.roles[1]+'/'+heroes.roles[2]"  row="2" col="1"></Label>
 
-        <Label text="Moves" row="3" col="0"></Label>
-        <Label [text]="pokemon.moves[0].move.name" row="3" col="1"></Label>
+        <Label text="Base HP: " row="3" col="0"></Label>
+        <Label [text]="heroes.base_health" row="3" col="1"></Label>
 
-        <Label text="Hp" row="4" col="0"></Label>
-        <Label [text]="pokemon.stats[5].base_stat" row="4" col="1"></Label>
+        <Label text="Base INT: " row="4" col="0"></Label>
+        <Label [text]="heroes.base_int" row="4" col="1"></Label>
         
-        <Label text="Attack" row="5" col="0"></Label>
-        <Label [text]="pokemon.stats[4].base_stat" row="5" col="1"></Label>
+        <Label text="Base STR" row="5" col="0"></Label>
+        <Label [text]="heroes.base_str" row="5" col="1"></Label>
 
-        <Label text="Deff" row="6" col="0"></Label>
-        <Label [text]="pokemon.stats[3].base_stat" row="6" col="1"></Label>
+        <Label text="Base AGI" row="6" col="0"></Label>
+        <Label [text]="heroes.base_agi" row="6" col="1"></Label>
 
 
 

@@ -1,16 +1,17 @@
 .Stat-nav{
     padding-top: 15px;
-    background-color : black;
+    background-color : rgb(58, 58, 58);
     height: 100px;
-    background-image: url("~/app/images/label.png");
     padding-left: 20px;
-    color: black;
+    color: white;
     vertical-align: middle;
     font-size: 20px;
     font-weight: bolder;
+    border-top-right-radius: 70px;
   }
   GridLayout{
-      background-color: black;
+      background-color: rgb(235, 235, 235);
+      color: black;
   }
   .h5{
       font-size: 20px;

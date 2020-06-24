@@ -1,10 +1,19 @@
 <GridLayout rows="*, auto, *" columns="*">
     <StackLayout row="1" col="0" class="p-x-20">
-      <Image src="~/app/images/dota2.png"></Image>
+      <Image src="~/app/images/doto.png" style="width: 50%;height: 50%;"></Image>
+      <Label text="DOTA 2 Companion" class="h1 p-l-20" row="2" 
+      col="0"  colSpan="2" style="color: white; margin-top: 20px;margin-bottom: 100px;
+      font-weight: bold; text-align: center;"></Label>
       <Button
-        class="-primary"
+      style="background-color: gray;"
         text="Login with Google"
         (tap)="login()"
+        [isEnabled]="!loginForm.invalid"
+      ></Button>
+      <Button
+      style="background-color: gray;"
+        text="Skip Login"
+        (tap)="skip()"
         [isEnabled]="!loginForm.invalid"
       ></Button>
     </StackLayout>

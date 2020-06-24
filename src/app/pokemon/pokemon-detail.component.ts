@@ -7,17 +7,18 @@ import { PokemonService } from "./pokemon.service";
     selector: "ns-details",
     templateUrl: "./pokemon-detail.component.html"
 })
-export class PokemonDetailComponent implements OnInit { 
+export class PokemonDetailComponent implements OnInit {
     name;
+    id;
     pokemon;
-
+    heroes;
     constructor(private route: ActivatedRoute, private ps: PokemonService) { }
 
     ngOnInit(): void {
-        this.name = this.route.snapshot.params.name;
-        this.ps.getPokemon(this.name).subscribe(
+        this.id = this.route.snapshot.params.name;
+        this.ps.getHeroes().subscribe(
             response => {
-                this.pokemon = response;
+                this.heroes = response[this.id-1];
             }
         )
     }
